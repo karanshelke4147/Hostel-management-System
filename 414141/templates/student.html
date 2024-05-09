@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block title %} HOSTEL BOOKING {% endblock title %}
+{% block body %}
+<div class="container mt-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-13">
+            <div class="card">
+              <div class="card-body">
+                <form action="/student" method="post">
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      value="{{current_user.email}}"
+                      name="email"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      placeholder="Full Name"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="dept" class="form-label"
+                      >Hostel</label
+                    >
+                    <input
+                type="text"
+                class="form-control"
+                name="hostel"
+                placeholder="A or B or C or D"
+                required
+              />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="number" class="form-label">Phone Number</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="number"
+                      name="number"
+                      placeholder="Phone Number"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-success btn-block">
+                    Book
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endblock body %}
+    </div>
+  </div>
+</div>

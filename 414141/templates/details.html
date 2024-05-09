@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %} DETAILS {% endblock title %} {%
+block body %}
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">SID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Name</th>
+      <th scope="col">Hostel</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in query %}
+    <tr>
+      <th scope="row">{{post.sid}}</th>
+      <td>{{post.email}}</td>
+      <td>{{post.name}}</td>
+      <td>{{post.hostel}}</td>
+      <td>{{post.number}}</td>
+      <td>
+        <a href="/edit/{{post.sid}}"
+          ><button class="btn btn-primary">Update</button>
+        </a>
+      </td>
+      <td>
+        <a href="/delete/{{post.sid}}"
+          ><button
+            onclick="return confirm('Are you sure to Delete data');"
+            class="btn btn-danger"
+          >
+            Delete
+          </button>
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock body %}
